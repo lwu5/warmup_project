@@ -6,7 +6,7 @@
 
 1. High-Level Description
 
-This subproject drives the turtlebot in a square. I use a loop that iterates four times to complete this behavior, and, for each iteration, I let the robot go straight for couple seconds and then make a 90-degree turn for couple seconds and stop the robot afterwards.
+- This subproject drives the turtlebot in a square. I use a loop that iterates four times to complete this behavior, and, for each iteration, I let the robot go straight for couple seconds and then make a 90-degree turn for couple seconds and stop the robot afterwards.
    
 2. Code Explanation
 
@@ -16,7 +16,7 @@ This subproject drives the turtlebot in a square. I use a loop that iterates fou
 
 3. Behavior (Gif)
 
-![IMG_1078](https://user-images.githubusercontent.com/59663733/161677416-e3756877-e1a9-4ddb-af9c-ac87dc773179.gif)
+- ![IMG_1078](https://user-images.githubusercontent.com/59663733/161677416-e3756877-e1a9-4ddb-af9c-ac87dc773179.gif)
 
 ## Wall Follower
 
