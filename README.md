@@ -34,7 +34,7 @@
 
 3. Behavior (Gif)
 
-## Challenges
+## Challenges![IMG_1260 2 (3)](https://user-images.githubusercontent.com/59663733/162643091-d4b9dbc1-d262-4a02-a82c-2bf3054c8394.gif)
 
 ## Future Work
 
