@@ -33,8 +33,9 @@
 2. Code Explanation
 
 3. Behavior (Gif)
+- ![img-1260-2_L4oXYl2i](https://user-images.githubusercontent.com/59663733/162643201-69591d7d-b445-4ab3-ae7f-d0ad226d397e.gif)
 
-## Challenges![IMG_1260 2 (3)](https://user-images.githubusercontent.com/59663733/162643091-d4b9dbc1-d262-4a02-a82c-2bf3054c8394.gif)
+## Challenges!
 
 ## Future Work
 
