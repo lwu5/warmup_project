@@ -27,8 +27,7 @@
 2. Code Explanation
 
 - Function `__init__` : initialize the ROS node and set up publisher to the cmd_vel ROS topic
-- Function `run` : first, we iterate through `data.ranges` list to identify if there's any object around robot (i.e., any non_zero value in the list); if yes, we keep track of the index of the min non_zero value `min_i`; if not, we set the `non_zero` flag to 0; and secondly, based on the `min_i` and `non_zero` values we do the following: if there's nothing around robot (i.e., `non_zero == 0`) or the robot is too far from the wall (i.e., `data.ranges[min_i]` too big), we set the angular velocity to zero to not change robot's direction; otherwise, we use PID on robot's angular velocity - both wall's angular location (i.e., `min_i`) and wall's distance to the robot (i.e., `data.ranges[min_i]`) contribute to robot's angular velocity. for the linear velocity, we set it a positve constant value because we always want to drive the robot forward and publish the twist at the end. 
-
+- Function `run` : first, we iterate through `data.ranges` list to identify if there's any object around robot (i.e., any non_zero value in the list); if yes, we keep track of the index of the min non_zero value `min_i`; if not, we set the `non_zero` flag to 0; and secondly, based on the `min_i` and `non_zero` values we do the following: if there's nothing around robot (i.e., `non_zero == 0`) or the robot is too far from the wall (i.e., `data.ranges[min_i]` too big), we set the angular velocity to zero to not change robot's direction; otherwise, we use PID on robot's angular velocity - both wall's angular location (i.e., `min_i`) and wall's distance to the robot (i.e., `data.ranges[min_i]`) contribute to robot's angular velocity. for the linear velocity, we set it a positve constant value because we always want to drive the robot forward and publish the message to `cmd_vel` at the end. 
 - Function `__main__` : instaniate the ROS node and run it
 
 3. Behavior (Gif)
@@ -38,7 +37,13 @@
 
 1. High-Level Description
    
+- This subproject let the robot follow a person (always facing the person with roughly a certain distance). I first identify if there's any object around the robot: if no, robot does nothing; if yes, we use PID to control the linear velocity to let robot keep a certain distance from the person and control the angular velocity to let the robot always face the person.
+   
 2. Code Explanation
+
+- Function `__init__` : initialize the ROS node and set up publisher to the cmd_vel ROS topic
+- Function `run` : first, we iterate through `data.ranges` list to identify if there's any object around robot (i.e., any non_zero value in the list); if yes, we keep track of the index of the min non_zero value `min_i`; if not, we set the `non_zero` flag to 0; and secondly, based on the `min_i` and `non_zero` values we do the following: if there's nothing around robot (i.e., `non_zero == 0`), we set both linear and angular velocity to zero so robot does nothing; otherwise, we use PID on robot's angular velocity - if the person is not within +/- 20 degrees from the robot's absolute front (0 degree), the robot would turn left / right (by spliting robot's direction into two parts based on 180-degree) to adjust the direction; we also use PID on robot's linear velocity - robot goes forward if it's not close enough to the person (i.e., `data.ranges[min_i]` too big); otherwise, we let robot stop. at the end, we publish the message to `cmd_vel`. 
+- Function `__main__` : instaniate the ROS node and run it
 
 3. Behavior (Gif)
 - ![img-1260-2_L4oXYl2i](https://user-images.githubusercontent.com/59663733/162643201-69591d7d-b445-4ab3-ae7f-d0ad226d397e.gif)
