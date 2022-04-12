@@ -50,6 +50,13 @@
 
 ## Challenges!
 
+- I found controlling the angular velocity is way harder than the linear velocity and I always got confused about turing left and right; similarly, mapping the `data.ranges` index to angular positions around robot in real life also confused me sometimes. Language-wise, I have not programmed in Python for a long time so I always got confused about its syntax with C/C++ (a huge difference). The way I overcome them was just by practising -- doing those lab practices to get familar with `cmd_vel` and `scan` messages and comparing my code with the sample solution are super helpful.
+
 ## Future Work
 
+- I think I would definitely work on the PID and I think my `k` values can definitely be modified to make the robot movement more smooth but that takes a lot of time to experiement. For the driving in a square subproject, I would definitely like to try the a-bit-more-complex `/odm` method. For both person and wall follower, I think my code still can be improved because my solution mainly based on using the non_zero index in the list `min_i` so the problem is what if `min_i` is actually a noise, which makes my robot behavior inconstant.
+
 ## Takeaway
+
+- Keep a good coding style and comment while writing code. For the driving in a square one, it took me a long time to go back to change bad variable names, add comments, and make my code object-oriented. So I learned to make my code good when I write it at the first place, which actually is very helpful to understand when I need to refer to my previous code later.
+- Try to work and test in the real turtlebot indead of the simulation. I personally did all my testing in the real turtlebot so I did not have any surprise at the end, but I've heard some other students who code worked in Gazebo and when they tested it in the real turtlebot, the robot behavhior was unintended, which caused a lot of trouble for them, because at that point, it's very hard to debug a long and complete script.
