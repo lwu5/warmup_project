@@ -25,6 +25,7 @@
 2. Code Explanation
 
 3. Behavior (Gif)
+- ![ezgif-3-6e1b49a054](https://user-images.githubusercontent.com/59663733/162842552-91a5c656-ffb0-47f1-b535-7150ee869d66.gif)
 
 ## Person Follower
 
